@@ -1,10 +1,12 @@
 [package]
+
 name = "pe"
 version = "0.1.0"
 authors = ["kanishkd4 <kanishkd4@gmail.com>"]
 
 [lib]
-name = "mylib"
-path = "src/lib.rs"
+name = "peutils"
+path = "src/peutils/lib.rs"
+
 
 [dependencies]
