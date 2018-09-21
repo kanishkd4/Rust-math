@@ -1,1 +1,1 @@
-pub mod peutils;
+pub mod primes;
