@@ -12,3 +12,5 @@ fn naive(number: u32) {
     let answer: u32 = vec_sum_square - vec_square_sum;
     println!("{}", answer);
 }
+
+// There should be a simpler formula based answer
