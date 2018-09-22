@@ -20,11 +20,21 @@ fn main() {
     84580156166097919133875499200524063689912560717606
     05886116467109405077541002256983155200055935729725
     71636269561882670428252483600823257530420752963450".replace("\n    ", "");
-    // let vec: Vec<u32> = &number[..4].to_string().iter().collect();
-    let four_digit = &number[0..4];
-    // let product = &four_digit[0..] * &four_digit[1] * &four_digit[2] * &four_digit[3];
-    let product: () = &four_digit[0..1] as u32;// * &four_digit[0..2];
-    println!("{:?}", four_digit);
-    println!("{}", product);
-    // println!("{:?}", number)
+    let digits: Vec<u64> = number.chars()
+    .filter_map(|c| c.to_digit(10))
+    .map(|n| n as u64)
+    .collect();
+
+    let max_product = digits.windows(13).map(|iter| iter.iter().fold(1u64, |a, &b| a * b)).max();
+
+    // for iter in digits.windows(13) {
+    //     let mul = iter.iter().fold(1u32, |a, &b| a * b);
+    //     println!("{:?}", iter);
+    //     println!("{}", mul);
+    // }
+
+    println!("{:?}", max_product);
 }
+
+
+// https://www.rosettacode.org/wiki/Sum_and_product_of_an_array#Rust
