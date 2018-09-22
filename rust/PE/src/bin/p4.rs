@@ -15,5 +15,8 @@ fn main() {
             }
         }
     }
-    println!("{:?}", vec.iter().max());
+    match vec.iter().max() {
+        Some(x) => println!("{}", x),
+        _ => println!("Error"),
+    }
 }
